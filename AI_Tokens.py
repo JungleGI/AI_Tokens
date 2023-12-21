@@ -22,7 +22,7 @@ start_time = round((time.mktime(user_date.timetuple())))*1000
 end_time = round(time.mktime(datetime.datetime.now().timetuple()))*1000
 
 #Tickers
-tickers = ('3911','2467','9104','7533','13051','22858','23756','24261')
+tickers = ('2467','9104','7533','13051','22858','23756','24261','15584','16876')
 
 
 #Data
@@ -85,12 +85,12 @@ df_daily_returns = df_daily_returns[1:]
 df_cum_daily_returns = (1 + df_daily_returns).cumprod() - 1
 
 #Charting
-Chart1 = df_cum_daily_returns[['Ocean Protocol','OriginTrail','AIOZ Network']]
+Chart1 = df_cum_daily_returns[['OriginTrail','AIOZ Network','Humans.ai','Artificial Liquid Intelligence']]
 Chart2 = df_cum_daily_returns[['ARC','Dynex','ChainGPT','OctaSpace','Oraichain']]
-#Chart3 = df_cum_daily_returns[['Oasys','MOBOX','Aurory','Treasure','Nakamoto Games','Gods Unchained','Humans.ai','Artificial Liquid Intelligence']]
+#Chart3 = df_cum_daily_returns[['Oasys','MOBOX','Aurory','Treasure','Nakamoto Games','Gods Unchained','Ocean Protocol']]
 st.line_chart(Chart1)
 st.line_chart(Chart2)
-#st.line_chart(Chart3),'15584''16876'
+#st.line_chart(Chart3),'3911'
 
 
 
