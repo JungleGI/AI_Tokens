@@ -85,7 +85,7 @@ df_daily_returns = df_daily_returns[1:]
 df_cum_daily_returns = (1 + df_daily_returns).cumprod() - 1
 
 #Charting
-Chart1 = df_cum_daily_returns[['Ocean Protocol','Origin Trail','AIOZ Network','Humans.ai','Artificial Liquid Intelligence']]
+Chart1 = df_cum_daily_returns[['Ocean Protocol','OriginTrail','AIOZ Network','Humans.ai','Artificial Liquid Intelligence']]
 Chart2 = df_cum_daily_returns[['ARC','Dynex','ChainGPT','OctaSpace']]
 #Chart3 = df_cum_daily_returns[['Oasys','MOBOX','Aurory','Treasure','Nakamoto Games','Gods Unchained']]
 st.line_chart(Chart1)
