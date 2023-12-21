@@ -1,0 +1,4 @@
+pandas==1.4.4
+Requests==2.31.0
+streamlit==1.29.0
+
