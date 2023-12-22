@@ -22,11 +22,12 @@ start_time = round((time.mktime(user_date.timetuple())))*1000
 end_time = round(time.mktime(datetime.datetime.now().timetuple()))*1000
 
 #Tickers
-tickers = ('9104','3911')#,'2467','7533','22858','23756','16876','15584','13051','24261')
+tickers = ('1','1027','5426','5805','3890','7226','5690','7278','6210','7080','3773','2130','2424','52','10603','22974','28298')
+#('9104','3911')#,'2467','7533','22858','23756','16876','15584','13051','24261')
 
 
 #Data
-#@st.cache_data()
+@st.cache_data()
 def getdata(symbol,start_time,end_time):
     url = 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/historical'
     parameters = {
@@ -85,13 +86,14 @@ df_daily_returns = df_daily_returns[1:]
 df_cum_daily_returns = (1 + df_daily_returns).cumprod() - 1
 
 #Charting
-Chart1 = df_cum_daily_returns[['AIOZ Network','Ocean Protocol']] #,'OriginTrail','Dynex','Artificial Liquid Intelligence']]
+#Chart1 = df_cum_daily_returns[['AIOZ Network','Ocean Protocol']] #,'OriginTrail','Dynex','Artificial Liquid Intelligence']]
 #Chart2 = df_cum_daily_returns[['ChainGPT','Oraichain','Humans.ai','ARC','OctaSpace']]
 #Chart3 = df_cum_daily_returns[['Oasys','MOBOX','Aurory','Treasure','Nakamoto Games','Gods Unchained','Humans.ai','ARC''OctaSpace']]
-st.line_chart(Chart1)
+#st.line_chart(Chart1)
 #st.line_chart(Chart2)
 #st.line_chart(Chart3)
-
-
-
+Chart1 = df_cum_daily_returns[['Bitcoin','Ethereum','Solana','Avalanche','Polygon','Injective','Aave','Render','Fetch.ai','SingularityNET']]
+Chart2 = df_cum_daily_returns[['XRP','Bittensor','Beam','Immutable','Gala','The Sandbox','Enjin Coin']]
+st.line_chart(Chart1)
+st.line_chart(Chart2)
 
