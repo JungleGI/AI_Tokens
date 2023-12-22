@@ -26,7 +26,7 @@ tickers = ('9104','3911','2467','7533','22858','23756','16876','15584','13051','
 
 
 #Data
-@st.cache_data()
+#@st.cache_data()
 def getdata(symbol,start_time,end_time):
     url = 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/historical'
     parameters = {
